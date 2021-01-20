@@ -167,8 +167,8 @@ function load_department_template( $template ) {
 	global $post;
 
 	if ( is_tax( 'department' ) && locate_template( array( 'taxonomy-department.php' ) ) !== $template ) {
-		die(plugin_dir_path( __FILE__ ));
-		return plugin_dir_path( __FILE__ ) . '/templates/taxonomy-department.php';
+		// die(plugin_dir_path( __FILE__ ));
+		return plugin_dir_path( __FILE__ ) . 'templates/taxonomy-department.php';
 	}
 
 	return $template;
