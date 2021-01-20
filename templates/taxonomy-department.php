@@ -28,7 +28,7 @@ require get_template_directory() . '/template-parts/hero/no-hero.php';
 
 				if ( 'row' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . '/row.php';
-				} elseif ( 'enchanced' === $dept_listing ) {
+				} elseif ( 'enhanced' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . '/enhanced.php';
 				} elseif ( 'table' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . '/table.php';
