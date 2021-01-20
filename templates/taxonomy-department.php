@@ -26,7 +26,7 @@ require get_template_directory() . '/template-parts/hero/no-hero.php';
 				$the_term = get_queried_object();
 
 				$dept_listing = get_field( 'department_listing_display', $the_term );
-				echo '<!--  TERM: ' . $the_term . ' -->';
+
 				if ( 'row' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . '/row.php';
 				} elseif ( 'enhanced' === $dept_listing ) {
