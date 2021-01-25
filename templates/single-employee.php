@@ -10,7 +10,7 @@ get_header();
 get_template_part( 'template-parts/hero/no-hero' );
 ?>
 
-<div class="w-full xl:max-w-screen-xl px-6 lg:px-10 xl:px-0 xl:mx-auto pt-8 pb-16">
+<div class="w-full xl:max-w-screen-xl px-6 lg:px-10 xl:px-0 xl:mx-auto pt-8 pb-16 overflow-x-hidden lg:overflow-x-auto">
 	<div>
 		<?php
 		while ( have_posts() ) :

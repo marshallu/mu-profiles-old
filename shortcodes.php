@@ -17,7 +17,7 @@ function mu_employee( $atts, $content = null ) {
 	$data = shortcode_atts(
 		array(
 			'department' => null,
-			'type'       => 'table',
+			'layout'     => 'table',
 		),
 		$atts
 	);
@@ -192,4 +192,5 @@ function mu_employee( $atts, $content = null ) {
 	return $output;
 }
 add_shortcode( 'mu_employee', 'mu_employee' );
+add_shortcode( 'mu_profiles', 'mu_employee' );
 add_shortcode( 'mu_profile', 'mu_employee' );
