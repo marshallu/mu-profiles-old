@@ -16,6 +16,7 @@ while ( have_posts() ) {
 	$phone       = get_field( 'employee_phone_number' );
 	$email       = get_field( 'employee_email_address' );
 	$contact_for = get_field( 'employee_contact_for' );
+
 	?>
 	<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">
 		<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">
@@ -42,7 +43,16 @@ while ( have_posts() ) {
 		</div>
 
 		<div class="columns small-12 medium-12 large-5  lg:px-6   mt-6 lg:mt-0">
+		<?php
+		if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
+			?>
+			<strong><?php echo esc_attr( get_field( 'profile_row_title', 'option' ) ); ?></strong>
+		<?php } else { ?>
 			<strong>Contact <?php esc_attr( get_the_title() ); ?> for:</strong>
+			<?php
+		}
+		?>
+
 			<ul>
 				<?php
 				if ( $contact_for ) {
