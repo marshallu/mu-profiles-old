@@ -70,3 +70,25 @@ function marsha_profile_department_listing( $post, $shortcode = false ) {
 		}
 	}
 }
+
+/**
+ * Displays listings of Departments on Profile listings and Profiles
+ *
+ * @param integer $post The Post ID to get the terms for.
+ */
+function marsha_profile_department( $post ) {
+	$terms = get_the_terms( $post, 'department' );
+
+	$links = array();
+
+	if ( $terms ) {
+		foreach ( $terms as $the_term ) {
+			$url = get_term_link( $the_term, 'department' );
+
+			if ( ! get_field( 'department_hide', $the_term ) ) {
+				$links[] = '<a href="' . esc_url( $url ) . '" rel="tag">' . $the_term->name . '</a>';
+			}
+		}
+		echo wp_kses_post( implode( ', ', $links ) );
+	}
+}
