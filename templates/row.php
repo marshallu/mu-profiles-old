@@ -25,8 +25,17 @@ while ( have_posts() ) {
 			<?php } ?>
 		</div>
 		<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0">
+		<?php
+		if ( get_field( 'profile_row_display_link_to_profiles', 'option' ) ) {
+			?>
+			<strong><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="underline hover:no-underline"><?php the_title(); ?></a></strong><br>
+			<?php
+		} else {
+			?>
 			<strong><?php the_title(); ?></strong><br>
-
+			<?php
+		}
+		?>
 			<?php echo esc_attr( $position ); ?><br>
 
 			<?php if ( get_field( 'employee_office_location' ) ) { ?>

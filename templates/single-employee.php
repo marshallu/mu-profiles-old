@@ -130,6 +130,46 @@ get_template_part( 'template-parts/hero/no-hero' );
 							<?php } ?>
 
 							<?php
+							if ( get_field( 'employee_contact_for' ) ) {
+								?>
+								<div id="contact_for" class="accordion mb-4" x-data="{ toggleOpen: false }">
+									<div class="flex justify-between bg-gray-100 text-gray-800 items-center cursor-pointer group border border-gray-200" x-on:click="toggleOpen = !toggleOpen">
+										<div class="accordion-title py-4 px-4 text-base font-semibold tracking-wide">
+											<?php
+											if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
+												?>
+												<?php echo esc_attr( get_field( 'profile_row_title', 'option' ) ); ?>
+											<?php } else { ?>
+												Contact For
+												<?php
+											}
+											?>
+										</div>
+										<div class="py-4 px-4">
+											<svg aria-hidden="true" :class="{ 'hidden' : !toggleOpen}" class="text-gray-700 hidden h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+											<svg aria-hidden="true" :class="{ 'hidden' : toggleOpen}" class="text-gray-700 h-4 w-4 fill-current"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+										</div>
+									</div>
+									<div class="bg-white border border-gray-200 border-t-0 rounded-b text-gray-700 px-4 py-4 lg:px-6 lg:py-6 hidden" :class="{ 'hidden' : !toggleOpen}">
+										<div role="list" class="flex flex-wrap mx-0 lg:-mx-4 justify-center">
+											<?php
+											foreach ( get_field( 'employee_contact_for' ) as $row ) {
+												echo '<div role="listitem" class="px-0 lg:px-4 w-full lg:w-full flex">';
+												echo '<div class="w-full flex items-start px-3 my-2">';
+												echo '<svg class="mr-4 h-6 w-6 text-green fill-current mt-1 lg:mt-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/></svg>';
+												echo '<span class="flex-1">';
+												echo wp_kses_post( $row['contact_text'] );
+												echo '</span>';
+												echo '</div>';
+												echo '</div>';
+											}
+											?>
+										</div>
+									</div>
+								</div>
+							<?php } ?>
+
+							<?php
 							if ( get_field( 'employee_education' ) ) {
 								?>
 								<div id="education" class="accordion mb-4" x-data="{ toggleOpen: false }">
