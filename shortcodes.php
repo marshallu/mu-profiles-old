@@ -117,7 +117,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0">';
 
 				if ( get_field( 'profile_row_display_link_to_profiles', 'option' ) ) {
-					$output .= '<strong><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
+					$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
 				} else {
 					$output .= '<strong>' . get_the_title() . '</strong><br>';
 				}
