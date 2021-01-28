@@ -60,7 +60,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">';
 				$output .= '<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">';
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="" />';
+					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="" />';
 				}
 				$output .= '</div>';
 				$output .= '<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0 entry-content">';
@@ -109,7 +109,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">';
 
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="" />';
+					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_attr( $image['sizes']['medium'] ) . '" class="" />';
 				}
 
 				$output .= '</div>';
