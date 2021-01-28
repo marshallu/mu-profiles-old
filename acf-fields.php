@@ -965,6 +965,25 @@ if( function_exists('acf_add_local_field_group') ):
 				'ui_on_text' => '',
 				'ui_off_text' => '',
 			),
+			array(
+				'key' => 'field_601325f95f478',
+				'label' => 'Hide "Profile"',
+				'name' => 'hide_profile',
+				'type' => 'true_false',
+				'instructions' => 'If selected this will hide the word "Profile" in the header on Profile pages.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'message' => '',
+				'default_value' => 0,
+				'ui' => 0,
+				'ui_on_text' => '',
+				'ui_off_text' => '',
+			),
 		),
 		'location' => array(
 			array(

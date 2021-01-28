@@ -18,7 +18,14 @@ get_template_part( 'template-parts/hero/no-hero' );
 			?>
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 				<header>
-					<h1 class="entry-title font-sans uppercase font-semibold text-gray-700 mb-4 text-3xl lg:text-4xl"><?php the_title(); ?> Profile</h1>
+					<h1 class="entry-title font-sans uppercase font-semibold text-gray-700 mb-4 text-3xl lg:text-4xl">
+						<?php the_title(); ?>
+						<?php
+						if ( ! get_field( 'hide_profile', 'option' ) ) {
+							echo ' Profile';
+						}
+						?>
+						</h1>
 				</header>
 
 				<div class="entry-content">
