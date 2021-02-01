@@ -66,7 +66,7 @@ while ( have_posts() ) {
 			if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
 				$row_title = get_field( 'profile_row_title', 'option' );
 			} else {
-				$row_title = get_the_title();
+				$row_title = 'Contact ' . get_the_title() . ' for:';
 			}
 			?>
 			<strong><?php echo esc_attr( $row_title ); ?></strong>
