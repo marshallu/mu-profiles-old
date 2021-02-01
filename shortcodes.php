@@ -58,12 +58,12 @@ function mu_employee( $atts, $content = null ) {
 				$contact_for = get_field( 'employee_contact_for' );
 
 				$output .= '<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">';
-				$output .= '<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">';
+				$output .= '<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">';
 				if ( get_field( 'employee_headshot' ) ) {
 					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="" />';
 				}
 				$output .= '</div>';
-				$output .= '<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0 entry-content">';
+				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">';
 				$output .= '<div class="text-xl font-semibold"><a href="' . get_post_permalink() . '">' . get_the_title() . '</a></div>';
 				$output .= '<div class="mt-3 mb-4">';
 				if ( get_field( 'employee_position' ) ) {
@@ -106,7 +106,7 @@ function mu_employee( $atts, $content = null ) {
 				$contact_for = get_field( 'employee_contact_for' );
 
 				$output .= '<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">';
-				$output .= '<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">';
+				$output .= '<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">';
 
 				if ( get_field( 'employee_headshot' ) ) {
 					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_attr( $image['sizes']['medium'] ) . '" class="" />';
@@ -114,7 +114,7 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '</div>';
 
-				$output .= '<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0">';
+				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0">';
 
 				if ( get_field( 'profile_row_display_link_to_profiles', 'option' ) ) {
 					$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
@@ -138,7 +138,7 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '</div>';
 
-				$output .= '<div class="columns small-12 medium-12 large-5  lg:px-6   mt-6 lg:mt-0">';
+				$output .= '<div class="columns w-full lg:w-3/4  lg:px-6   mt-6 lg:mt-0">';
 
 				if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
 					$output .= '<strong>' . esc_attr( get_field( 'profile_row_title', 'option' ) ) . '</strong>';

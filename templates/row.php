@@ -19,12 +19,12 @@ while ( have_posts() ) {
 
 	?>
 	<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">
-		<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">
+		<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">
 			<?php if ( get_field( 'employee_headshot' ) ) { ?>
 				<img src="<?php echo esc_url( $image['sizes']['medium'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 			<?php } ?>
 		</div>
-		<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0">
+		<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">
 		<?php
 		if ( get_field( 'profile_row_display_link_to_profiles', 'option' ) ) {
 			?>
@@ -51,7 +51,7 @@ while ( have_posts() ) {
 			<?php } ?>
 		</div>
 
-		<div class="columns small-12 medium-12 large-5  lg:px-6   mt-6 lg:mt-0">
+		<div class="columns w-full lg:w-5/12 lg:px-6  mt-6 lg:mt-0">
 		<?php
 		if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
 			?>

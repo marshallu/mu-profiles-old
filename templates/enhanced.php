@@ -18,12 +18,12 @@ while ( have_posts() ) {
 	$contact_for = get_field( 'employee_contact_for' );
 	?>
 	<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">
-		<div class="columns small-12 medium-12 large-2 lg:px-6 mt-6 lg:mt-0">
+		<div class="columns w-full lg:w-1/4 lg:px-6 mt-6 lg:mt-0">
 			<?php if ( get_field( 'employee_headshot' ) ) { ?>
 				<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="" />
 			<?php } ?>
 		</div>
-		<div class="columns small-12 medium-12 large-5 lg:px-6 mt-6 lg:mt-0 entry-content">
+		<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">
 			<div class="text-xl font-semibold uppercase"><a href="<?php echo esc_url( get_post_permalink() ); ?>"><?php the_title(); ?></a></div>
 
 			<div class="mt-3 mb-4">
