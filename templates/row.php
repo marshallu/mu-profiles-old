@@ -31,8 +31,17 @@ while ( have_posts() ) {
 			<strong><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="underline hover:no-underline"><?php the_title(); ?></a></strong><br>
 			<?php
 		} else {
-			?>
+
+			if ( get_field( 'employee_more_info_link' ) ) {
+				?>
+				<strong><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>"><?php the_title(); ?></a></strong><br>
+					<?php
+			} else {
+				?>
 			<strong><?php the_title(); ?></strong><br>
+				<?php
+			}
+			?>
 			<?php
 		}
 		?>
@@ -53,26 +62,24 @@ while ( have_posts() ) {
 
 		<div class="columns w-full lg:w-5/12 lg:px-6  mt-6 lg:mt-0">
 		<?php
-		if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
+		if ( $contact_for ) {
+			if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
+				$row_title = get_field( 'profile_row_title', 'option' );
+			} else {
+				$row_title = get_the_title();
+			}
 			?>
-			<strong><?php echo esc_attr( get_field( 'profile_row_title', 'option' ) ); ?></strong>
-		<?php } else { ?>
-			<strong>Contact <?php esc_attr( get_the_title() ); ?> for:</strong>
-			<?php
-		}
-		?>
-
+			<strong><?php echo esc_attr( $row_title ); ?></strong>
 			<ul>
 				<?php
-				if ( $contact_for ) {
-					foreach ( $contact_for as $item ) {
-						?>
-						<li><?php echo esc_html( $item['contact_text'] ); ?></li>
-						<?php
-					}
+				foreach ( $contact_for as $item ) {
+					?>
+					<li><?php echo esc_html( $item['contact_text'] ); ?></li>
+					<?php
 				}
 				?>
 			</ul>
+		<?php } ?>
 		</div>
 	</div>
 <?php } ?>
