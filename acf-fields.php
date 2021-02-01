@@ -866,6 +866,25 @@ if( function_exists('acf_add_local_field_group') ):
 				'ui_on_text' => '',
 				'ui_off_text' => '',
 			),
+			array(
+				'key' => 'field_6018754861104',
+				'label' => 'Custom Title',
+				'name' => 'department_custom_title',
+				'type' => 'text',
+				'instructions' => 'If text is entered this will overwrite the title at the top of the department\'s listing page.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
 		),
 		'location' => array(
 			array(

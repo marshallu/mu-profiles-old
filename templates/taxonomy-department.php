@@ -17,13 +17,17 @@ require get_template_directory() . '/template-parts/hero/no-hero.php';
 
 			<header class="page-header">
 				<?php
+				$the_term = get_queried_object();
+
+				if ( get_field( 'department_custom_title', $the_term ) ) {
+					echo '<h1 class="entry-title font-sans uppercase font-semibold text-gray-700 mb-4 text-3xl lg:text-4xl">' . esc_attr( get_field( 'department_custom_title', $the_term ) ) . '</h1>';
+				} else {
 					the_archive_title( '<h1 class="entry-title font-sans uppercase font-semibold text-gray-700 mb-4 text-3xl lg:text-4xl">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
+				}
+				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 				<?php
-
-				$the_term = get_queried_object();
 
 				$dept_listing = get_field( 'department_listing_display', $the_term );
 
