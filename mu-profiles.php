@@ -67,7 +67,7 @@ function marsha_employee_post_type() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'custom-fields', 'page-attributes' ),
+		'supports'           => array( 'title', 'custom-fields', 'page-attributes', 'revisions' ),
 		'taxonomies'         => array( 'department' ),
 		'menu_icon'          => 'dashicons-groups',
 	);
