@@ -31,7 +31,7 @@
 				<tr class="">
 					<td class="text-gray-900">
 						<?php
-						if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
+						if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 							?>
 							<?php echo esc_attr( get_the_title() ); ?>
 							<?php

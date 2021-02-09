@@ -31,6 +31,8 @@ function mu_employee( $atts, $content = null ) {
 		),
 	);
 
+	$the_term = false;
+
 	if ( $data['department'] ) {
 		$args['tax_query'] = array(
 			array(
@@ -39,6 +41,8 @@ function mu_employee( $atts, $content = null ) {
 				'terms'    => $data['department'],
 			),
 		);
+
+		$the_term = get_term_by( 'slug', $data['department'], 'department' );
 	}
 
 	$the_query = new WP_Query( $args );
@@ -65,10 +69,10 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '</div>';
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">';
 
-				if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
-					$output .= '<div class="text-xl font-semibold uppercase">' . the_title() . '</a></div>';
+				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
+					$output .= '<div class="text-xl font-semibold uppercase">' . get_the_title() . '</a></div>';
 				} else {
-					$output .= '<div class="text-xl font-semibold uppercase"><a href="' . esc_url( get_post_permalink() ) . '">' . the_title() . '</a></div>';
+					$output .= '<div class="text-xl font-semibold uppercase"><a href="' . esc_url( get_post_permalink() ) . '">' . get_the_title() . '</a></div>';
 				}
 
 				$output .= '<div class="mt-3 mb-4">';
@@ -122,13 +126,13 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0">';
 
-				if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
-					$output .= '<strong>' . the_title() . '</strong><br>';
+				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
+					$output .= '<strong>' . get_the_title() . '</strong><br>';
 				} else {
 					if ( get_field( 'employee_more_info_link' ) ) {
-						$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '">' . the_title() . '</a></strong><br>';
+						$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '">' . get_the_title() . '</a></strong><br>';
 					} else {
-						$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . the_title() . '</a></strong><br>';
+						$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
 					}
 				}
 
@@ -194,7 +198,7 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '<tr class="">';
 
-				if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
+				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 					$output .= '<td class="">' . esc_attr( get_the_title() ) . '</td>';
 				} else {
 					$output .= '<td class=""><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer">' . esc_attr( get_the_title() ) . '</a></td>';

@@ -849,8 +849,8 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_5fff27c858618',
-				'label' => 'Display Link',
-				'name' => 'department_display_link',
+				'label' => 'Hide Link to Profile',
+				'name' => 'department_hide_link_to_profile',
 				'type' => 'true_false',
 				'instructions' => 'If turned off the department will not display on any of the listings or profile pages.',
 				'required' => 0,
@@ -861,7 +861,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'message' => '',
-				'default_value' => 1,
+				'default_value' => 0,
 				'ui' => 0,
 				'ui_on_text' => '',
 				'ui_off_text' => '',
@@ -983,10 +983,10 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_600f395bbf760',
-				'label' => 'Row Display Link to Profiles',
-				'name' => 'profile_row_display_link_to_profiles',
+				'label' => 'Hide Link to Profiles',
+				'name' => 'profile_row_hide_link_to_profiles',
 				'type' => 'true_false',
-				'instructions' => 'If checked this will display a link to individuals\' Profile pages from Row Display Listing',
+				'instructions' => 'If checked this will hide a link to individuals\' Profile pages from Row Display Listing',
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(

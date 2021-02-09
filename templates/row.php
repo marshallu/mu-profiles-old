@@ -16,7 +16,6 @@ while ( have_posts() ) {
 	$phone       = get_field( 'employee_phone_number' );
 	$email       = get_field( 'employee_email_address' );
 	$contact_for = get_field( 'employee_contact_for' );
-
 	?>
 	<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">
 		<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">
@@ -26,7 +25,7 @@ while ( have_posts() ) {
 		</div>
 		<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">
 			<?php
-			if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
+			if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 				?>
 				<strong><?php the_title(); ?></strong><br>
 				<?php

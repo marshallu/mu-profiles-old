@@ -25,7 +25,7 @@ while ( have_posts() ) {
 		</div>
 		<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">
 		<?php
-		if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
+		if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 			?>
 			<div class="text-xl font-semibold uppercase"><?php the_title(); ?></a></div>
 			<?php
