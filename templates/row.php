@@ -25,14 +25,14 @@ while ( have_posts() ) {
 		</div>
 		<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">
 			<?php
-			if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
+			if ( get_field( 'employee_more_info_link' ) ) {
 				?>
-				<strong><?php the_title(); ?></strong><br>
+					<strong><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>" class="underline hover:no-underline"><?php the_title(); ?></a></strong><br>
 				<?php
 			} else {
-				if ( get_field( 'employee_more_info_link' ) ) {
+				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 					?>
-					<strong><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>"><?php the_title(); ?></a></strong><br>
+						<strong><?php the_title(); ?></strong><br>
 					<?php
 				} else {
 					?>
