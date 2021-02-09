@@ -58,7 +58,9 @@ function marsha_profile_department_listing( $post, $shortcode = false ) {
 		foreach ( $terms as $the_term ) {
 			$url = get_term_link( $the_term, 'department' );
 
-			$links[] = '<a href="' . esc_url( $url ) . '" rel="tag">' . $the_term->name . '</a>';
+			if ( ! get_field( 'department_hide', $the_term ) ) {
+				$links[] = '<a href="' . esc_url( $url ) . '" rel="tag">' . $the_term->name . '</a>';
+			}
 		}
 
 		if ( $shortcode ) {
