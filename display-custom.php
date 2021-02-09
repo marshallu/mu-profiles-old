@@ -63,7 +63,7 @@ function marsha_profile_department_listing( $post, $shortcode = false ) {
 			}
 		}
 
-		echo '<div class="hidden"><pre>' . $links . '</pre></div>';
+		echo '<div class="hidden"><pre>' . var_dump( $links ) . '</pre></div>';
 
 		if ( $shortcode ) {
 			return wp_kses_post( implode( ', ', $links ) );
