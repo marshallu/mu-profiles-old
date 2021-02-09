@@ -45,7 +45,7 @@ get_template_part( 'template-parts/hero/no-hero' );
 									<div class="my-2 text-lg font-semibold"><?php the_field( 'employee_position' ); ?></div>
 								<?php } ?>
 
-								<?php marsha_profile_department_listing( $post->ID ); ?>
+								<?php marsha_profile_department_listing( get_the_ID() ); ?>
 							</div>
 
 							<?php
