@@ -24,8 +24,15 @@ while ( have_posts() ) {
 			<?php } ?>
 		</div>
 		<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">
+		<?php
+		if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
+			?>
+			<div class="text-xl font-semibold uppercase"><?php the_title(); ?></a></div>
+			<?php
+		} else {
+			?>
 			<div class="text-xl font-semibold uppercase"><a href="<?php echo esc_url( get_post_permalink() ); ?>"><?php the_title(); ?></a></div>
-
+		<?php } ?>
 			<div class="mt-3 mb-4">
 				<?php if ( get_field( 'employee_position' ) ) { ?>
 					<div class="font-semibold"><?php the_field( 'employee_position' ); ?></div>

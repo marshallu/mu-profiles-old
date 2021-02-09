@@ -29,7 +29,17 @@
 				the_post();
 				?>
 				<tr class="">
-					<td class="text-gray-900"><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer"><?php echo esc_attr( get_the_title() ); ?></a></td>
+					<td class="text-gray-900">
+						<?php
+						if ( get_field( 'profile_row_hide_link_to_profiles', 'option' ) ) {
+							?>
+							<?php echo esc_attr( get_the_title() ); ?>
+							<?php
+						} else {
+							?>
+							<a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer"><?php echo esc_attr( get_the_title() ); ?></a>
+						<?php } ?>
+					</td>
 					<td class="text-gray-900"><?php the_field( 'employee_position' ); ?></td>
 					<td class="text-gray-900"><?php the_field( 'employee_office_location' ); ?></td>
 					<td class="text-gray-900"><?php the_field( 'employee_phone_number' ); ?></td>
