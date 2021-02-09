@@ -58,12 +58,8 @@ function marsha_profile_department_listing( $post, $shortcode = false ) {
 		foreach ( $terms as $the_term ) {
 			$url = get_term_link( $the_term, 'department' );
 
-			if ( ! get_field( 'department_hide', $the_term ) ) {
-				$links[] = '<a href="' . esc_url( $url ) . '" rel="tag">' . $the_term->name . '</a>';
-			}
+			$links[] = '<a href="' . esc_url( $url ) . '" rel="tag">' . $the_term->name . '</a>';
 		}
-
-		echo '<div class="hidden"><pre>' . var_dump( $links ) . '</pre></div>';
 
 		if ( $shortcode ) {
 			return wp_kses_post( implode( ', ', $links ) );
