@@ -126,11 +126,11 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0">';
 
-				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
-					$output .= '<strong>' . get_the_title() . '</strong><br>';
+				if ( get_field( 'employee_more_info_link' ) ) {
+					$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
 				} else {
-					if ( get_field( 'employee_more_info_link' ) ) {
-						$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '">' . get_the_title() . '</a></strong><br>';
+					if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
+						$output .= '<strong>' . get_the_title() . '</strong><br>';
 					} else {
 						$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
 					}
