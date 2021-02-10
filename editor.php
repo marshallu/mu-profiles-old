@@ -37,6 +37,8 @@ function set_custom_edit_employee_columns( $columns ) {
 }
 add_filter( 'manage_employee_posts_columns', 'set_custom_edit_employee_columns' );
 
+add_filter( 'manage_edit-employee_sortable_columns', 'mu_add_custom_column_make_sortable' );
+
 /**
  * Change placeholder text on Create/Edit Profile page to 'Enter Name Here'
  *
