@@ -19,8 +19,12 @@ add_action( 'add_meta_boxes', 'remove_yoast_metabox_employees', 11 );
  * @param type $columns Default WordPress post columns.
  */
 function set_custom_edit_employee_columns( $columns ) {
-	unset( $columns['date'] );
-	unset( $columns['modified'] );
+
+	if ( ! is_super_admin() ) {
+		unset( $columns['date'] );
+		unset( $columns['modified'] );
+	}
+
 	unset( $columns['wpseo-score'] );
 	unset( $columns['wpseo-score-readability'] );
 	unset( $columns['wpseo-title'] );
