@@ -29,8 +29,8 @@ get_template_part( 'template-parts/hero/no-hero' );
 				</header>
 
 				<div class="entry-content">
-					<div class="flex flex-wrap mx-0 lg:-mx-6">
-						<div class="w-full lg:w-1/4 px-0 lg:px-6">
+					<div class="flex flex-wrap lg:space-x-6">
+						<div class="w-full lg:w-1/4">
 							<?php
 							if ( get_field( 'employee_headshot' ) ) {
 								$image = get_field( 'employee_headshot' );
@@ -127,7 +127,7 @@ get_template_part( 'template-parts/hero/no-hero' );
 							<?php } ?>
 
 						</div>
-						<div class="w-full lg:w-3/4 px-0 lg:px-6 mt-8 lg:mt-0">
+						<div class="w-full lg:w-3/4 mt-8 lg:mt-0">
 							<?php
 							if ( get_field( 'employee_biography' ) ) {
 								?>
