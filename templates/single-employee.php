@@ -35,6 +35,7 @@ get_template_part( 'template-parts/hero/no-hero' );
 							if ( get_field( 'employee_headshot' ) ) {
 								$image = get_field( 'employee_headshot' );
 								?>
+								<div class="hidden"><pre><?php echo print_r( $image ); ?></pre></div>
 								<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="" />
 							<?php } ?>
 
