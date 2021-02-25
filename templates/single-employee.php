@@ -35,7 +35,7 @@ get_template_part( 'template-parts/hero/no-hero' );
 							if ( get_field( 'employee_headshot' ) ) {
 								$image = get_field( 'employee_headshot' );
 								?>
-								<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="" />
+								<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="" />
 							<?php } ?>
 
 							<div class="mt-6 mb-8">
