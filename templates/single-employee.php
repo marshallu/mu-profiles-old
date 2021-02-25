@@ -34,9 +34,8 @@ get_template_part( 'template-parts/hero/no-hero' );
 							<?php
 							if ( get_field( 'employee_headshot' ) ) {
 								$image = get_field( 'employee_headshot' );
-								echo wp_get_attachment_image( $image['id'], 'medium' );
 								?>
-								<div class="hidden"><pre><?php echo print_r( $image ); ?></pre></div>
+								<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="" />
 							<?php } ?>
 
 							<div class="mt-6 mb-8">
