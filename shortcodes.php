@@ -124,7 +124,7 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '</div>';
 
-				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0">';
+				$output .= '<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">';
 
 				if ( get_field( 'employee_more_info_link' ) ) {
 					$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
@@ -152,7 +152,7 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '</div>';
 
-				$output .= '<div class="columns w-full lg:w-3/4  lg:px-6   mt-6 lg:mt-0">';
+				$output .= '<div class="columns w-full lg:w-5/12  lg:px-6   mt-6 lg:mt-0">';
 
 				if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
 					$output .= '<strong>' . esc_attr( get_field( 'profile_row_title', 'option' ) ) . '</strong>';
