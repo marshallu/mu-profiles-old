@@ -61,6 +61,7 @@ function marsha_employee_post_type() {
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
+		'show_in_rest'       => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'profile' ),
 		'capability_type'    => 'post',
