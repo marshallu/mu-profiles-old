@@ -42,8 +42,16 @@ while ( have_posts() ) {
 				?>
 				<?php
 			}
+
+			if ( get_field( 'employee_preferred_pronouns' ) ) {
+				?>
+				Preferred Pronouns: <?php echo esc_attr( get_field( 'employee_preferred_pronouns' ) ); ?><br>
+				<?php
+			}
+
+			echo esc_attr( $position );
 			?>
-			<?php echo esc_attr( $position ); ?><br>
+			<br>
 
 			<?php if ( get_field( 'employee_office_location' ) ) { ?>
 				Location: <?php echo esc_attr( $office ); ?><br>

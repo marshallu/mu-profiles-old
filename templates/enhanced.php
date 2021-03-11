@@ -32,7 +32,14 @@ while ( have_posts() ) {
 		} else {
 			?>
 			<div class="text-xl font-semibold uppercase"><a href="<?php echo esc_url( get_post_permalink() ); ?>"><?php the_title(); ?></a></div>
-		<?php } ?>
+			<?php
+		}
+		if ( get_field( 'employee_preferred_pronouns' ) ) {
+			?>
+				<div class="flex items-center my-2">Preferred Pronouns: <?php echo esc_attr( get_field( 'employee_preferred_pronouns' ) ); ?></div>
+			<?php
+		}
+		?>
 			<div class="mt-3 mb-4">
 				<?php if ( get_field( 'employee_position' ) ) { ?>
 					<div class="font-semibold"><?php the_field( 'employee_position' ); ?></div>
