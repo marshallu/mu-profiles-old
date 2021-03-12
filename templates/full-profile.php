@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying profiles as Enhanced.
+ * Template part for displaying profiles as Full Profile
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -69,6 +69,9 @@ while ( have_posts() ) {
 						<a href="mailto:<?php the_field( 'employee_email_address' ); ?>"><?php the_field( 'employee_email_address' ); ?></a>
 					</div>
 			<?php } ?>
+			<div class="mt-6">
+				<?php the_field( 'employee_biography' ); ?>
+			</div>
 		</div>
 	</div>
 <?php } ?>

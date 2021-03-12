@@ -2,7 +2,7 @@
 /**
  * Customization of the editor for Profile and Department
  *
- * @package mu-profiles
+ * @package MU Profiles
  */
 
 /**

@@ -2,7 +2,7 @@
 /**
  * Default template for displaying Department listings
  *
- * @package mu-profiles
+ * @package MU Profiles
  */
 
 get_header();
@@ -37,11 +37,15 @@ require get_template_directory() . '/template-parts/hero/no-hero.php';
 					include plugin_dir_path( __FILE__ ) . '/enhanced.php';
 				} elseif ( 'table' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . '/table.php';
+				} elseif ( 'full-profile' === $dept_listing ) {
+					include plugin_dir_path( __FILE__ ) . '/full-profile.php';
 				} else {
 					if ( 'row' === get_field( 'profile_listing_display', 'option' ) ) {
 						include plugin_dir_path( __FILE__ ) . '/row.php';
 					} elseif ( 'enhanced' === get_field( 'profile_listing_display', 'option' ) ) {
 						include plugin_dir_path( __FILE__ ) . '/enhanced.php';
+					} elseif ( 'full-profile' === get_field( 'profile_listing_display', 'option' ) ) {
+						include plugin_dir_path( __FILE__ ) . '/full-profile.php';
 					} else {
 						include plugin_dir_path( __FILE__ ) . '/table.php';
 					}

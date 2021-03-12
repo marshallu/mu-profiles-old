@@ -2,7 +2,7 @@
 /**
  * Default template for single profiles.
  *
- * @package mu-profiles
+ * @package MU Profiles
  */
 
 get_header();

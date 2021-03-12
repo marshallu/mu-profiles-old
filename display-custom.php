@@ -3,7 +3,7 @@
  * Customization of display items required for the MU Profiles plugin
  * Department page ordering, ensuring all profiles will display not just 10, and custom department listing on profiles.
  *
- * @package mu-profiles
+ * @package MU Profiles
  */
 
 /**

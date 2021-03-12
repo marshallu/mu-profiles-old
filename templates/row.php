@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mu-profiles
+ * @package MU Profiles
  */
 
 while ( have_posts() ) {
