@@ -857,6 +857,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'table' => 'Table',
 					'row' => 'Row',
 					'enhanced' => 'Enhanced',
+					'full-profile' => 'Full Profile',
 				),
 				'default_value' => 'inherit',
 				'allow_null' => 0,
