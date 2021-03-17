@@ -16,6 +16,7 @@
 function mu_employee( $atts, $content = null ) {
 	$data = shortcode_atts(
 		array(
+			'ids'        => false,
 			'department' => false,
 			'layout'     => false,
 			'site'       => false,
@@ -27,29 +28,44 @@ function mu_employee( $atts, $content = null ) {
 		switch_to_blog( get_id_from_blogname( $data['site'] ) );
 	}
 
-	$args = array(
-		'post_type'      => 'employee',
-		'posts_per_page' => -1,
-		'orderby'        => array(
-			'menu_order' => 'ASC',
-			'title'      => 'ASC',
-		),
-	);
+	if ( $data['ids'] ) {
+		$ids = trim( $data['ids'] );
+		$ids = explode(',', $ids);
 
-	$the_term     = false;
-	$dept_listing = false;
-
-	if ( $data['department'] ) {
-		$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'department',
-				'field'    => 'slug',
-				'terms'    => $data['department'],
+		$args = array(
+			'post__in'       => $ids,
+			'post_type'      => 'employee',
+			'posts_per_page' => -1,
+			'orderby'        => array(
+				'menu_order' => 'ASC',
+				'title'      => 'ASC',
+			),
+		);
+	} else {
+		$args = array(
+			'post_type'      => 'employee',
+			'posts_per_page' => -1,
+			'orderby'        => array(
+				'menu_order' => 'ASC',
+				'title'      => 'ASC',
 			),
 		);
 
-		$the_term     = get_term_by( 'slug', $data['department'], 'department' );
-		$dept_listing = get_field( 'department_listing_display', $the_term );
+		$the_term     = false;
+		$dept_listing = false;
+
+		if ( $data['department'] ) {
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'department',
+					'field'    => 'slug',
+					'terms'    => $data['department'],
+				),
+			);
+
+			$the_term     = get_term_by( 'slug', $data['department'], 'department' );
+			$dept_listing = get_field( 'department_listing_display', $the_term );
+		}
 	}
 
 	$the_query = new WP_Query( $args );
