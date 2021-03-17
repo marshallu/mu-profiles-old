@@ -72,7 +72,7 @@ function mu_employee( $atts, $content = null ) {
 
 	if ( $data['layout'] ) {
 		$display_style = $data['layout'];
-	} elseif ( $dept_listing ) {
+	} elseif ( $dept_listing && 'inherit' !== $dept_listing ) {
 		$display_style = $dept_listing;
 	} elseif ( get_field( 'profile_listing_display', 'option' ) ) {
 		$display_style = get_field( 'profile_listing_display', 'option' );
