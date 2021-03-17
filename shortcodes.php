@@ -30,7 +30,7 @@ function mu_employee( $atts, $content = null ) {
 
 	if ( $data['ids'] ) {
 		$ids = trim( $data['ids'] );
-		$ids = explode(',', $ids);
+		$ids = array_map( 'trim', explode( ',', $ids ) );
 
 		$args = array(
 			'post__in'       => $ids,
