@@ -177,6 +177,12 @@ function mu_employee( $atts, $content = null ) {
 					$output .= '<div class="text-xl font-semibold uppercase"><a href="' . esc_url( get_post_permalink() ) . '">' . get_the_title() . '</a></div>';
 				}
 
+				if ( get_field( 'employee_preferred_pronouns' ) ) {
+					?>
+						<div class="flex items-center my-2">Preferred Pronouns: <?php echo esc_attr( get_field( 'employee_preferred_pronouns' ) ); ?></div>
+					<?php
+				}
+
 				$output .= '<div class="mt-3 mb-4">';
 				if ( get_field( 'employee_position' ) ) {
 					$output .= '<div class="font-semibold mb-1">' . $position . '</div>';
