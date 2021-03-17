@@ -32,7 +32,7 @@ function set_custom_edit_employee_columns( $columns ) {
 	unset( $columns['wpseo-focuskw'] );
 	unset( $columns['wpseo-links'] );
 	unset( $columns['wpseo-linked'] );
-	$columns['title'] = __( 'Name', 'textdomain' );
+	$columns['title'] = __( 'Name', 'mu-profiles' );
 	return $columns;
 }
 add_filter( 'manage_employee_posts_columns', 'set_custom_edit_employee_columns' );

@@ -310,7 +310,11 @@ function mu_employee( $atts, $content = null ) {
 	} else {
 		$output = 'No profiles found for this category.';
 	}
-	restore_current_blog();
+
+	if ( $data['site'] ) {
+		restore_current_blog();
+	}
+
 	return $output;
 }
 add_shortcode( 'mu_employee', 'mu_employee' );
