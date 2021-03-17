@@ -178,9 +178,7 @@ function mu_employee( $atts, $content = null ) {
 				}
 
 				if ( get_field( 'employee_preferred_pronouns' ) ) {
-					?>
-						<div class="flex items-center my-2">Preferred Pronouns: <?php echo esc_attr( get_field( 'employee_preferred_pronouns' ) ); ?></div>
-					<?php
+						$output .= '<div class="flex items-center my-2">Preferred Pronouns: ' . esc_attr( get_field( 'employee_preferred_pronouns' ) ) . '</div>';
 				}
 
 				$output .= '<div class="mt-3 mb-4">';
