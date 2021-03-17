@@ -144,6 +144,21 @@ function mu_profiles_deactivate() {
 register_activation_hook( __FILE__, 'mu_profiles_deactivate' );
 
 /**
+ * Rename the department page title from Archives to Profiles.
+ *
+ * @param string $title The string of the default title.
+ * @return string
+ */
+function mu_profiles_archive_title( $title ) {
+	if ( is_tax( 'department' ) ) {
+		$title = get_the_archive_title() . ' Department Profiles | ' . get_bloginfo( 'name' );
+		return $title;
+	}
+	return $title;
+}
+add_filter( 'wpseo_title', 'mu_profiles_archive_title', 9999 );
+
+/**
  * Load Employee Template
  *
  * @param string $template The filename of the template for a single employee.
