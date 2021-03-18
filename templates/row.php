@@ -58,7 +58,7 @@ while ( have_posts() ) {
 			<?php } ?>
 
 			<?php if ( get_field( 'employee_phone_number' ) ) { ?>
-				Telephone: <a href="tel:+1-<?php echo esc_attr( $phone ); ?>"><?php echo esc_attr( $phone ); ?></a><br>
+				Telephone: <a href="tel:+1-<?php echo esc_attr( mu_profiles_activate_format_phone( $phone ) ); ?>"><?php echo esc_attr( mu_profiles_activate_format_phone( $phone ) ); ?></a><br>
 			<?php } ?>
 
 			<?php if ( get_field( 'employee_email_address' ) && ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'listing' === get_field( 'profile_show_email_address', 'option' ) ) ) { ?>

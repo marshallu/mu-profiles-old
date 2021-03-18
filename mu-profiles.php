@@ -192,5 +192,20 @@ function load_department_template( $template ) {
 }
 add_filter( 'template_include', 'load_department_template' );
 
+/**
+ * Format the phone number for consistency
+ *
+ * @param string $phone The phone number string.
+ * @return string
+ */
+function mu_profiles_activate_format_phone( $phone ) {
+	$phone = str_replace( '304.696.', '304-696-', $phone );
+	$phone = str_replace( '304.256.', '304-256-', $phone );
+	$phone = str_replace( '304.746.', '304-746-', $phone );
+	$phone = str_replace( '(304) ', '304-', $phone );
+	$phone = str_replace( '(304)-', '304-', $phone );
+	return $phone;
+}
+
 add_action( 'init', 'marsha_employee_post_type' );
 add_action( 'init', 'add_custom_department_taxonomy' );
