@@ -307,9 +307,9 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '<td class="">' . $position . '</td>';
 				$output .= '<td class="">' . $office . '</td>';
-				$output .= '<td class="">' . esc_attr( mu_profiles_activate_format_phone( $phone ) ) . '</td>';
+				$output .= '<td class="whitespace-nowrap">' . esc_attr( mu_profiles_activate_format_phone( $phone ) ) . '</td>';
 				if ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'profile' === get_field( 'profile_show_email_address', 'option' ) ) {
-					$output .= '<td class=""><a href="mailto:' . esc_attr( $email ) . '" rel="noopener noreferrer">' . esc_attr( $email ) . '</a></td>';
+					$output .= '<td class="whitespace-nowrap"><a href="mailto:' . esc_attr( $email ) . '" rel="noopener noreferrer">' . esc_attr( $email ) . '</a></td>';
 				}
 
 				$output .= '</tr>';
