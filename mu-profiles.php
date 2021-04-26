@@ -204,6 +204,7 @@ function mu_profiles_activate_format_phone( $phone ) {
 	$phone = str_replace( '304.746.', '304-746-', $phone );
 	$phone = str_replace( '(304) ', '304-', $phone );
 	$phone = str_replace( '(304)-', '304-', $phone );
+	$phone = str_replace( '(304)696', '304-696', $phone );
 	return $phone;
 }
 
