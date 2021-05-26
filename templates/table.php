@@ -42,7 +42,7 @@
 					</td>
 					<td class="text-gray-900"><?php the_field( 'employee_position' ); ?></td>
 					<td class="text-gray-900"><?php the_field( 'employee_office_location' ); ?></td>
-					<td class="text-gray-900"><?php the_field( 'employee_phone_number' ); ?></td>
+					<td class="text-gray-900"><?php echo esc_attr( mu_profiles_activate_format_phone( get_field( 'employee_phone_number' ) ) ); ?></td>
 					<?php
 					if ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'listing' === get_field( 'profile_show_email_address', 'option' ) ) {
 						?>
