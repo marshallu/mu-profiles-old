@@ -332,3 +332,80 @@ function mu_employee( $atts, $content = null ) {
 add_shortcode( 'mu_employee', 'mu_employee' );
 add_shortcode( 'mu_profiles', 'mu_employee' );
 add_shortcode( 'mu_profile', 'mu_employee' );
+
+/**
+ * Dummy shortcode for testing
+ *
+ * @param object $atts The attributes inlcuded with the shortcode.
+ * @param string $content The HTML content between the tags.
+ * @return string
+ */
+function cos_input( $atts, $content = null ) {
+	$data = shortcode_atts(
+		array(
+			'site' => false,
+		),
+		$atts
+	);
+
+	$the_term = term_exists( 'Administration', 'department' );
+	if ( ! $the_term ) {
+		wp_insert_term(
+			'Administration',
+			'department',
+			array()
+		);
+	}
+
+	$the_term = term_exists( 'Staff', 'department' );
+	if ( ! $the_term ) {
+		wp_insert_term(
+			'Staff',
+			'department',
+			array()
+		);
+	}
+
+	$the_term = term_exists( 'Faculty', 'department' );
+	if ( ! $the_term ) {
+		wp_insert_term(
+			'Faculty',
+			'department',
+			array()
+		);
+	}
+
+	$file = fopen( 'http://www.marshall.edu/ucomm/files/2021/06/COS-Faculty-Staff.csv', 'r' );
+
+	while ( false !== ( $csv = fgetcsv( $file ) ) ) {
+		if ( $data['site'] === $csv[0] ) {
+			if ( ! get_page_by_title( $csv[4], OBJECT, 'employee' ) ) {
+
+				$department = get_term_by( 'name', $csv[3], 'department' );
+
+				$user_profile = array(
+					'post_title'   => $csv[4],
+					'post_content' => '',
+					'post_type'    => 'employee',
+					'post_status'  => 'publish',
+					'meta_input'   => array(
+						'employee_phone_number'    => $csv[7],
+						'employee_email_address'   => $csv[8],
+						'employee_position'        => $csv[5],
+						'employee_office_location' => $csv[6],
+						'employee_website'         => $csv[9],
+					),
+					'tax_input'    => array(
+						'department' => $department->term_id,
+					),
+				);
+
+				wp_insert_post( $user_profile );
+			}
+		}
+	}
+
+	fclose( $file );
+
+}
+add_shortcode( 'cos_input', 'cos_input' );
