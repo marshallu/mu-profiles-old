@@ -379,7 +379,7 @@ function cos_input( $atts, $content = null ) {
 
 	while ( false !== ( $csv = fgetcsv( $file ) ) ) {
 		if ( $data['site'] === $csv[0] ) {
-			if ( ! get_page_by_title( $csv[4], OBJECT, 'employee' ) ) {
+			if ( ! get_page_by_title( $csv[3], OBJECT, 'employee' ) ) {
 
 				$department = get_term_by( 'name', $csv[2], 'department' );
 
