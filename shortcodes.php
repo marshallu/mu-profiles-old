@@ -134,21 +134,22 @@ function mu_employee( $atts, $content = null ) {
 
 				$output .= '<div class="columns w-full lg:w-5/12  lg:px-6   mt-6 lg:mt-0">';
 
-				if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
-					$output .= '<strong>' . esc_attr( get_field( 'profile_row_title', 'option' ) ) . '</strong>';
-				} else {
-					$output .= '<strong>Contact ' . get_the_title() . ' for:</strong>';
-				}
-
-				$output .= '<ul>';
-
 				if ( $contact_for ) {
-					foreach ( $contact_for as $item ) {
-						$output .= '<li>' . $item['contact_text'] . '</li>';
+					if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
+						$row_title = get_field( 'profile_row_title', 'option' );
+					} else {
+						$row_title = 'Contact ' . get_the_title() . ' for:';
 					}
-				}
 
-				$output .= '</ul>';
+					$output .= '<strong>' . esc_attr( $row_title ) . '</strong>';
+					$output .= '<ul>';
+
+					foreach ( $contact_for as $item ) {
+						$output .= '<li>' . esc_html( $item['contact_text'] ) . '</li>';
+					}
+
+					$output .= '</ul>';
+				}
 				$output .= '</div>';
 				$output .= '</div>';
 			}
