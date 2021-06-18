@@ -378,7 +378,7 @@ function cos_input( $atts, $content = null ) {
 	$file = fopen( 'http://www.marshall.edu/ucomm/files/2021/06/COS-Faculty-Staff.csv', 'r' );
 
 	while ( false !== ( $csv = fgetcsv( $file ) ) ) {
-		if ( $data['site'] === $csv[0] ) {
+		if ( $data['site'] === trim( $csv[0] ) ) {
 			if ( ! get_page_by_title( $csv[3], OBJECT, 'employee' ) ) {
 
 				$department = get_term_by( 'name', $csv[2], 'department' );
