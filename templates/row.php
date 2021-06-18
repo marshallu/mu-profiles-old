@@ -68,7 +68,8 @@ while ( have_posts() ) {
 
 		<div class="columns w-full lg:w-5/12 lg:px-6  mt-6 lg:mt-0">
 		<?php
-		if ( count( $contact_for ) ) {
+		echo 'Count: ' . count( $contact_for );
+		if ( count( $contact_for ) > 0 ) {
 			if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {
 				$row_title = get_field( 'profile_row_title', 'option' );
 			} else {
