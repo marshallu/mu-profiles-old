@@ -381,19 +381,19 @@ function cos_input( $atts, $content = null ) {
 		if ( $data['site'] === $csv[0] ) {
 			if ( ! get_page_by_title( $csv[4], OBJECT, 'employee' ) ) {
 
-				$department = get_term_by( 'name', $csv[3], 'department' );
+				$department = get_term_by( 'name', $csv[2], 'department' );
 
 				$user_profile = array(
-					'post_title'   => $csv[4],
+					'post_title'   => $csv[3],
 					'post_content' => '',
 					'post_type'    => 'employee',
 					'post_status'  => 'publish',
 					'meta_input'   => array(
-						'employee_phone_number'    => $csv[7],
-						'employee_email_address'   => $csv[8],
-						'employee_position'        => $csv[5],
-						'employee_office_location' => $csv[6],
-						'employee_website'         => $csv[9],
+						'employee_phone_number'    => $csv[6],
+						'employee_email_address'   => $csv[7],
+						'employee_position'        => $csv[4],
+						'employee_office_location' => $csv[5],
+						'employee_website'         => $csv[8],
 					),
 					'tax_input'    => array(
 						'department' => $department->term_id,
