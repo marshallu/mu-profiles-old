@@ -240,7 +240,7 @@ function mu_employee( $atts, $content = null ) {
 				}
 				$output .= '</div>';
 
-				$output .= '<div class="flex-1 ml-3">';
+				$output .= '<div class="flex-1 ml-4">';
 				if ( get_field( 'employee_position' ) ) {
 					$output .= '<div class="font-semibold">' . get_field( 'employee_position' ) . '</div>';
 				}
