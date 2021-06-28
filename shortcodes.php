@@ -228,14 +228,15 @@ function mu_employee( $atts, $content = null ) {
 				$office   = get_field( 'employee_office_location' );
 				$phone    = get_field( 'employee_phone_number' );
 				$email    = get_field( 'employee_email_address' );
+
 				$output .= '<div class="w-full lg:w-1/3 px-0 lg:px-4 mb-4 lg:mb-8 flex flex-row">';
 				$output .= '<div class="w-full bg-gray-100 border border-gray-200 px-4 py-4">';
 				$output .= '<div class="text-xl font-semibold">' . get_the_title() . '</div>';
 				$output .= '<div class="pt-3 flex space-x-4">';
-				$output .= '<div>';
+				$output .= '<div class="w-1/3">';
 
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="w-24" />';
+					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="" />';
 				}
 				$output .= '</div>';
 

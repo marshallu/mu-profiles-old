@@ -1118,6 +1118,25 @@ if( function_exists('acf_add_local_field_group') ):
 				'ajax' => 0,
 				'placeholder' => '',
 			),
+			array(
+				'key' => 'field_60da01c42a647',
+				'label' => 'Sort by Last Name, First Name',
+				'name' => 'sort_by_last_name_first_name',
+				'type' => 'true_false',
+				'instructions' => 'If this is set to true all profiles must have a first name and last name entered or they will not display.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'message' => '',
+				'default_value' => 0,
+				'ui' => 0,
+				'ui_on_text' => '',
+				'ui_off_text' => '',
+			),
 		),
 		'location' => array(
 			array(

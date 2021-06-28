@@ -56,7 +56,7 @@ add_filter( 'enter_title_here', 'change_default_title_to_name' );
 
 function mu_profiles_modify_title( $data )
 {
-	if ( $data['post_type'] == 'employee' && ( $_POST['acf']['field_60d9fb1ad119e'] && $_POST['acf']['field_60d9fb1ad119e'] ) ) { // If the actual field name of the rating date is different, you'll have to update this.
+	if ( $data['post_type'] == 'employee' && ( $_POST['acf']['field_60d9fadc1cb1d'] && $_POST['acf']['field_60d9faf11cb1f'] ) ) { // If the actual field name of the rating date is different, you'll have to update this.
 		$employee_title  = $_POST['acf']['field_60d9fb1ad119e'];
 		$employee_first  = $_POST['acf']['field_60d9fadc1cb1d'];
 		$employee_middle = $_POST['acf']['field_60d9fae71cb1e'];

@@ -13,14 +13,38 @@
  * @param object $query The defauly query.
  */
 function order_department_archives( $query ) {
-	// Exit out if it's the admin or it isn't the main query.
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
-	// Order category archives by title in ascending order.
+
 	if ( is_tax( 'department' ) ) {
-		$query->set( 'order', 'asc' );
-		$query->set( 'orderby', 'menu_order title' );
+
+		if ( get_field( 'sort_by_last_name_first_name', 'option' ) ) {
+			$query->set(
+				'meta_query',
+				array(
+					'last_name' => array(
+						'key' => 'last_name',
+					),
+					'first_name' => array(
+						'key' => 'first_name',
+					),
+				)
+			);
+
+			$query->set(
+				'orderby',
+				array(
+					'menu_order' => 'ASC',
+					'last_name'  => 'ASC',
+					'first_name' => 'ASC',
+				)
+			);
+		} else {
+			$query->set( 'order', 'asc' );
+			$query->set( 'orderby', 'menu_order title' );
+		}
+
 		return;
 	}
 }

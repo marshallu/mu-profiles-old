@@ -23,9 +23,9 @@ while ( have_posts() ) {
 		<div class="w-full bg-gray-100 border border-gray-200 px-4 py-4">
 			<div class="text-xl font-semibold"><?php the_title(); ?></div>
 			<div class="pt-3 flex space-x-4">
-			<div>
+			<div class="w-1/3">
 				<?php if ( get_field( 'employee_headshot' ) ) { ?>
-					<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="w-24" />
+					<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 				<?php } ?>
 			</div>
 			<div>
