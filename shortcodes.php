@@ -254,7 +254,8 @@ function mu_employee( $atts, $content = null ) {
 				}
 
 				if ( get_field( 'employee_email_address' ) && ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'listing' === get_field( 'profile_show_email_address', 'option' ) ) ) {
-					$output .= '<div class="text-sm lg:text-base"><a href="mailto:' . get_field( 'employee_email_address' ) . '">' . get_field( 'employee_email_address' ) . '</a></div>';
+					$output .= '<div class="hidden xl:block"><a href="mailto:' . get_field( 'employee_email_address' ) . '">' . get_field( 'employee_email_address' ) . '</a></div>';
+					$output .= '<div class="block xl:hidden"><a href="mailto:' . get_field( 'employee_email_address' ) . '">Email</a></div>';
 				}
 
 				if ( get_field( 'employee_website' ) ) {
