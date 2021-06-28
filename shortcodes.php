@@ -232,15 +232,15 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="w-full lg:w-1/3 px-0 lg:px-4 mb-4 lg:mb-8 flex flex-row">';
 				$output .= '<div class="w-full bg-gray-100 border border-gray-200 px-4 py-4">';
 				$output .= '<div class="text-xl font-semibold">' . get_the_title() . '</div>';
-				$output .= '<div class="pt-3 flex space-x-4">';
-				$output .= '<div class="w-1/3">';
+				$output .= '<div class="pt-3 flex justify-between">';
+				$output .= '<div>';
 
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="" />';
+					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="w-24" />';
 				}
 				$output .= '</div>';
 
-				$output .= '<div class="w-2/3">';
+				$output .= '<div>';
 				if ( get_field( 'employee_position' ) ) {
 					$output .= '<div class="font-semibold">' . get_field( 'employee_position' ) . '</div>';
 				}
