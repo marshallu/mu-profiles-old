@@ -219,6 +219,52 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '</div>';
 				$output .= '</div>';
 			}
+		} elseif ( 'card' === $display_style ) {
+			$output .= '<div class="flex flex-wrap mx-0 lg:-mx-4">';
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+				$image    = get_field( 'employee_headshot' );
+				$position = get_field( 'employee_position' );
+				$office   = get_field( 'employee_office_location' );
+				$phone    = get_field( 'employee_phone_number' );
+				$email    = get_field( 'employee_email_address' );
+				$output .= '<div class="w-full lg:w-1/3 px-0 lg:px-4 mb-4 lg:mb-8 flex flex-row">';
+				$output .= '<div class="w-full bg-gray-100 border border-gray-200 px-4 py-4">';
+				$output .= '<div class="text-xl font-semibold">' . get_the_title() . '</div>';
+				$output .= '<div class="pt-3 flex space-x-4">';
+				$output .= '<div>';
+
+				if ( get_field( 'employee_headshot' ) ) {
+					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="w-24" />';
+				}
+				$output .= '</div>';
+
+				$output .= '<div>';
+				if ( get_field( 'employee_position' ) ) {
+					$output .= '<div class="font-semibold">' . get_field( 'employee_position' ) . '</div>';
+				}
+
+				if ( get_field( 'employee_office_location' ) ) {
+					$output .= '<div>Office: ' . get_field( 'employee_office_location' ) . '</div>';
+				}
+
+				if ( get_field( 'employee_phone_number' ) ) {
+					$output .= '<div>Phone: ' . ( mu_profiles_activate_format_phone( get_field( 'employee_phone_number' ) ) ) . '</div>';
+				}
+
+				if ( get_field( 'employee_email_address' ) && ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'listing' === get_field( 'profile_show_email_address', 'option' ) ) ) {
+					$output .= '<div class="flex items-center my-2"><a href="mailto:' . get_field( 'employee_email_address' ) . '">' . get_field( 'employee_email_address' ) . '</a></div>';
+				}
+
+				if ( get_field( 'employee_website' ) ) {
+					$output .= '<div><a href="' . get_field( 'employee_website' ) . '">Visit Website</a></div>';
+				}
+				$output .= '</div>';
+				$output .= '</div>';
+				$output .= '</div>';
+				$output .= '</div>';
+			}
+			$output .= '</div>';
 		} elseif ( 'full-profile' === $display_style ) {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
