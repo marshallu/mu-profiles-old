@@ -240,7 +240,7 @@ function mu_employee( $atts, $content = null ) {
 				}
 				$output .= '</div>';
 
-				$output .= '<div class="w-2/3">';
+				$output .= '<div class="w-2/3 ml-3">';
 				if ( get_field( 'employee_position' ) ) {
 					$output .= '<div class="font-semibold">' . get_field( 'employee_position' ) . '</div>';
 				}
@@ -259,7 +259,7 @@ function mu_employee( $atts, $content = null ) {
 				}
 
 				if ( get_field( 'employee_website' ) ) {
-					$output .= '<div class="text-sm lg:text-base"><a href="' . get_field( 'employee_website' ) . '">Visit Website</a></div>';
+					$output .= '<div><a href="' . get_field( 'employee_website' ) . '">Visit Website</a></div>';
 				}
 				$output .= '</div>';
 				$output .= '</div>';
