@@ -74,7 +74,7 @@ function mu_profiles_modify_title( $data ) {
 
 		$full_name .= $employee_last;
 
-		$data['post_title'] = $full_name;
+		$data['post_title'] = trim( $full_name );
 	}
 	return $data; // Returns the modified data.
 }
