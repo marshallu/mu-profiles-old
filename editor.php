@@ -54,21 +54,29 @@ function change_default_title_to_name( $title ) {
 add_filter( 'enter_title_here', 'change_default_title_to_name' );
 
 
-function mu_profiles_modify_title( $data )
-{
+function mu_profiles_modify_title( $data ) {
 	if ( $data['post_type'] == 'employee' && ( $_POST['acf']['field_60d9fadc1cb1d'] && $_POST['acf']['field_60d9faf11cb1f'] ) ) { // If the actual field name of the rating date is different, you'll have to update this.
 		$employee_title  = $_POST['acf']['field_60d9fb1ad119e'];
 		$employee_first  = $_POST['acf']['field_60d9fadc1cb1d'];
 		$employee_middle = $_POST['acf']['field_60d9fae71cb1e'];
 		$employee_last   = $_POST['acf']['field_60d9faf11cb1f'];
 
-		$full_name  = $employee_title . ' ';
+		$full_name = '';
+
+		if ( $employee_title ) {
+			$full_name .= $employee_title . ' ';
+		}
+
 		$full_name .= $employee_first . ' ';
-		$full_name .= $employee_middle . ' ';
+
+		if ( $employee_middle ) {
+			$full_name .= $employee_middle . ' ';
+		}
+
 		$full_name .= $employee_last . ' ';
 
-		$data['post_title'] =  $full_name;
+		$data['post_title'] = $full_name;
 	}
 	return $data; // Returns the modified data.
 }
-add_filter( 'wp_insert_post_data' , 'mu_profiles_modify_title' , '99', 1 ); // Grabs the inserted post data so you can modify it.
+add_filter( 'wp_insert_post_data', 'mu_profiles_modify_title', '99', 1 ); // Grabs the inserted post data so you can modify it.

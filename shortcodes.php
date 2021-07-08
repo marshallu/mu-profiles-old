@@ -43,6 +43,9 @@ function mu_employee( $atts, $content = null ) {
 		);
 	} else {
 
+		$the_term     = false;
+		$dept_listing = false;
+
 		if ( get_field( 'sort_by_last_name_first_name', 'option' ) ) {
 			$args = array(
 				'post_type'      => 'employee',
@@ -73,9 +76,6 @@ function mu_employee( $atts, $content = null ) {
 				),
 			);
 		}
-
-		$the_term     = false;
-		$dept_listing = false;
 
 		if ( $data['department'] ) {
 			$args['tax_query'] = array(
