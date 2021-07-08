@@ -72,7 +72,7 @@ function mu_profiles_modify_title( $data ) {
 			$full_name .= $employee_middle . ' ';
 		}
 
-		$full_name .= $employee_last . ' ';
+		$full_name .= $employee_last;
 
 		$data['post_title'] = $full_name;
 	}
