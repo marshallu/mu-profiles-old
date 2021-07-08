@@ -43,7 +43,7 @@ function order_department_archives( $query ) {
 			$query->set( 'order', 'asc' );
 			$query->set( 'orderby', 'menu_order title' );
 		}
-
+		$query->parse_query();
 		return;
 	}
 }
