@@ -51,7 +51,6 @@ function mu_employee( $atts, $content = null ) {
 				'post_type'      => 'employee',
 				'posts_per_page' => -1,
 				'meta_query'     => array(
-					'relation'   => 'OR',
 					'first_name' => array(
 						'key' => 'first_name',
 					),
