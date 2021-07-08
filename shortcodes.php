@@ -42,14 +42,37 @@ function mu_employee( $atts, $content = null ) {
 			),
 		);
 	} else {
-		$args = array(
-			'post_type'      => 'employee',
-			'posts_per_page' => -1,
-			'orderby'        => array(
-				'menu_order' => 'ASC',
-				'title'      => 'ASC',
-			),
-		);
+
+		if ( get_field( 'sort_by_last_name_first_name', 'option' ) ) {
+			$args = array(
+				'post_type'      => 'employee',
+				'posts_per_page' => -1,
+				'meta_query'     => array(
+					'relation'   => 'AND',
+					'first_name' => array(
+						'key' => 'first_name',
+					),
+					'last_name'  => array(
+						'key' => 'last_name',
+					),
+				),
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'last_name'  => 'ASC',
+					'first_name' => 'ASC',
+					'title'      => 'ASC',
+				),
+			);
+		} else {
+			$args = array(
+				'post_type'      => 'employee',
+				'posts_per_page' => -1,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'title'      => 'ASC',
+				),
+			);
+		}
 
 		$the_term     = false;
 		$dept_listing = false;
