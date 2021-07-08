@@ -12,43 +12,43 @@
  *
  * @param object $query The defauly query.
  */
-function order_department_archives( $query ) {
-	if ( is_admin() || ! $query->is_main_query() ) {
-		return;
-	}
+// function order_department_archives( $query ) {
+// 	if ( is_admin() || ! $query->is_main_query() ) {
+// 		return;
+// 	}
 
-	if ( is_tax( 'department' ) ) {
+// 	if ( is_tax( 'department' ) ) {
 
-		if ( get_field( 'sort_by_last_name_first_name', 'option' ) ) {
-			$query->set(
-				'meta_query',
-				array(
-					'last_name' => array(
-						'key' => 'last_name',
-					),
-					'first_name' => array(
-						'key' => 'first_name',
-					),
-				)
-			);
+// 		if ( get_field( 'sort_by_last_name_first_name', 'option' ) ) {
+// 			$query->set(
+// 				'meta_query',
+// 				array(
+// 					'last_name' => array(
+// 						'key' => 'last_name',
+// 					),
+// 					'first_name' => array(
+// 						'key' => 'first_name',
+// 					),
+// 				)
+// 			);
 
-			$query->set(
-				'orderby',
-				array(
-					'menu_order' => 'ASC',
-					'last_name'  => 'ASC',
-					'first_name' => 'ASC',
-				)
-			);
-		} else {
-			$query->set( 'order', 'asc' );
-			$query->set( 'orderby', 'menu_order title' );
-		}
+// 			$query->set(
+// 				'orderby',
+// 				array(
+// 					'menu_order' => 'ASC',
+// 					'last_name'  => 'ASC',
+// 					'first_name' => 'ASC',
+// 				)
+// 			);
+// 		} else {
+// 			$query->set( 'order', 'asc' );
+// 			$query->set( 'orderby', 'menu_order title' );
+// 		}
 
-		return;
-	}
-}
-add_action( 'pre_get_posts', 'order_department_archives', 1 );
+// 		return;
+// 	}
+// }
+// add_action( 'pre_get_posts', 'order_department_archives', 1 );
 
 /**
  * All department listings will display all listings.
