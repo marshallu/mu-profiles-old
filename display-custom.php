@@ -18,7 +18,6 @@ function order_department_archives( $query ) {
 	}
 
 	if ( is_tax( 'department' ) ) {
-
 		if ( get_field( 'sort_by_last_name_first_name', 'option' ) ) {
 			$query->set(
 				'meta_query',
