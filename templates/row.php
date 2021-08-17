@@ -24,24 +24,23 @@ while ( have_posts() ) {
 			<?php } ?>
 		</div>
 		<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">
-			<div class="text-lg">
 			<?php
 			if ( get_field( 'employee_more_info_link' ) ) {
 				?>
-					<strong><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>" class="underline hover:no-underline"><?php the_title(); ?></a></strong><br>
+					<span class="text-lg font-bold"><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>" class="underline hover:no-underline"><?php the_title(); ?></a></span><br>
 				<?php
 			} else {
 				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 					?>
-						<strong><?php the_title(); ?></strong><br>
+						<span class="text-lg font-bold"><?php the_title(); ?></span><br>
 					<?php
 				} else {
 					?>
-					<strong><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="underline hover:no-underline"><?php the_title(); ?></a></strong><br>
+					<span class="text-lg font-bold"><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="underline hover:no-underline"><?php the_title(); ?></a></span><br>
 					<?php
 				}
 				?>
-				</div>
+
 				<?php
 			}
 
