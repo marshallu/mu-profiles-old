@@ -24,6 +24,7 @@ while ( have_posts() ) {
 			<?php } ?>
 		</div>
 		<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">
+			<div class="text-lg">
 			<?php
 			if ( get_field( 'employee_more_info_link' ) ) {
 				?>
@@ -40,6 +41,7 @@ while ( have_posts() ) {
 					<?php
 				}
 				?>
+				</div>
 				<?php
 			}
 
