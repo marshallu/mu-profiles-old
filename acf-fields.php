@@ -806,12 +806,12 @@ if( function_exists('acf_add_local_field_group') ):
 				'button_label' => 'Add List',
 				'sub_fields' => array(
 					array(
-						'key' => 'field_6075e99bfb968',
+						'key' => 'field_5f71d60c0098b',
 						'label' => 'List Title',
 						'name' => 'list_title',
 						'type' => 'text',
 						'instructions' => '',
-						'required' => 1,
+						'required' => 0,
 						'conditional_logic' => 0,
 						'wrapper' => array(
 							'width' => '',
@@ -825,9 +825,9 @@ if( function_exists('acf_add_local_field_group') ):
 						'maxlength' => '',
 					),
 					array(
-						'key' => 'field_6075e9a8fb969',
+						'key' => 'field_5f71d424f7df6',
 						'label' => 'List Item',
-						'name' => 'list_item',
+						'name' => 'employee_list_item',
 						'type' => 'repeater',
 						'instructions' => '',
 						'required' => 0,
@@ -841,10 +841,10 @@ if( function_exists('acf_add_local_field_group') ):
 						'min' => 0,
 						'max' => 0,
 						'layout' => 'table',
-						'button_label' => '',
+						'button_label' => 'Add List Item',
 						'sub_fields' => array(
 							array(
-								'key' => 'field_6075e9b4fb96a',
+								'key' => 'field_5f71d5c6606b2',
 								'label' => 'List Item',
 								'name' => 'list_item_detail',
 								'type' => 'text',
