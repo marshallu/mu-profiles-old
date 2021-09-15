@@ -384,7 +384,6 @@ function mu_employee( $atts, $content = null ) {
 				}
 
 				$output .= '</tr>';
-				wp_reset_postdata();
 			}
 
 			$output .= '</tbody>';
