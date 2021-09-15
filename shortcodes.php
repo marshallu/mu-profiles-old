@@ -398,7 +398,7 @@ function mu_employee( $atts, $content = null ) {
 	if ( $data['site'] ) {
 		restore_current_blog();
 	}
-
+	wp_reset_postdata();
 	return $output;
 }
 add_shortcode( 'mu_employee', 'mu_employee' );
