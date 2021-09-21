@@ -20,7 +20,7 @@ while ( have_posts() ) {
 	<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">
 		<div class="columns w-full lg:w-1/4 lg:px-6 mt-6 lg:mt-0">
 			<?php if ( get_field( 'employee_headshot' ) ) { ?>
-				<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="" />
+				<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="rounded-lg" />
 			<?php } ?>
 		</div>
 		<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">

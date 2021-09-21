@@ -24,7 +24,7 @@ if ( is_page_template( array( 'page-full-width.php', 'page-full-width-hero.php',
 			<div class="w-full <?php echo esc_attr( $width ); ?> lg:px-6 mb-8">
 				<div class="flex flex-wrap flex-row lg:-mx-2">
 					<div class="w-full lg:w-1/4 lg:px-2">
-						<img class="object-cover shadow-sm rounded-lg" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+						<img class="object-cover rounded-lg" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 					</div>
 					<div class="w-full lg:w-3/4 lg:px-2 mt-4 lg:mt-0">
 						<div class="text-lg font-semibold space-y-1">

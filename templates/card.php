@@ -25,7 +25,7 @@ while ( have_posts() ) {
 			<div class="pt-3 flex space-x-4">
 			<div class="w-1/3">
 				<?php if ( get_field( 'employee_headshot' ) ) { ?>
-					<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+					<img class="rounded-lg" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 				<?php } ?>
 			</div>
 			<div>

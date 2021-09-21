@@ -121,7 +121,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">';
 
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_attr( $image['sizes']['medium'] ) . '" class="" />';
+					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_attr( $image['sizes']['medium'] ) . '" class="rounded-lg" />';
 				}
 
 				$output .= '</div>';
@@ -189,7 +189,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">';
 				$output .= '<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">';
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="" />';
+					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="rounded-lg" />';
 				}
 				$output .= '</div>';
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">';
@@ -258,7 +258,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div>';
 
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="w-24" />';
+					$output .= '<img src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" class="w-24 rounded-lg" />';
 				}
 				$output .= '</div>';
 
@@ -305,7 +305,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="w-full ' . esc_attr( $width ) . ' lg:px-6 mb-8">';
 				$output .= '<div class="flex flex-wrap flex-row lg:-mx-2">';
 				$output .= '<div class="w-full lg:w-1/4 lg:px-2">';
-				$output .= '<img class="object-cover shadow-sm rounded-lg" src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
+				$output .= '<img class="object-cover rounded-lg" src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
 				$output .= '</div>';
 				$output .= '<div class="w-full lg:w-3/4 lg:px-2 mt-4 lg:mt-0">';
 				$output .= '<div class="text-lg font-semibold space-y-1">';
@@ -336,7 +336,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">';
 				$output .= '<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">';
 				if ( get_field( 'employee_headshot' ) ) {
-					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="" />';
+					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '" alt="' . esc_url( $image['alt'] ) . '" class="rounded-lg" />';
 				}
 				$output .= '</div>';
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">';
