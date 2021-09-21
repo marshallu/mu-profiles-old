@@ -289,6 +289,39 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '</div>';
 			}
 			$output .= '</div>';
+		} elseif ( 'basic' === $display_style ) {
+			if ( is_page_template( array( 'page-full-width.php', 'page-full-width-hero.php', 'page-secondary-nav.php', 'page-secondary-classic.php', 'page-experience.php' ) ) ) {
+				$width = ' lg:w-1/3 ';
+			} else {
+				$width = ' lg:w-1/2 ';
+			}
+			$output .= '<div class="">';
+			$output .= '<div class="flex flex-wrap lg:-mx-6">';
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+
+				$image = get_field( 'employee_headshot' );
+
+				$output .= '<div class="w-full ' . esc_attr( $width ) . ' lg:px-6 mb-8">';
+				$output .= '<div class="flex flex-wrap flex-row lg:-mx-2">';
+				$output .= '<div class="w-full lg:w-1/4 lg:px-2">';
+				$output .= '<img class="object-cover shadow-sm rounded-lg" src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
+				$output .= '</div>';
+				$output .= '<div class="w-full lg:w-3/4 lg:px-2 mt-4 lg:mt-0">';
+				$output .= '<div class="text-lg font-semibold space-y-1">';
+				$output .= '<div>' . get_the_title() . '</div>';
+				$output .= '<p class="text-gray-500">' . get_field( 'employee_position' ) . '</p>';
+				$output .= '</div>';
+				$output .= '<div class="text-lg mt-1">';
+				$output .= '<p class="text-gray-500">' . get_field( 'employee_biography' ) . '</p>';
+				$output .= '</div>';
+				$output .= '</div>';
+				$output .= '</div>';
+				$output .= '</div>';
+
+			}
+			$output .= '</div>';
+			$output .= '</div>';
 		} elseif ( 'full-profile' === $display_style ) {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
