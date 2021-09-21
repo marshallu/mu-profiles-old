@@ -20,7 +20,7 @@
 					<div class="w-full lg:w-1/2 lg:px-6 mb-8">
 						<div class="flex flex-wrap flex-row lg:-mx-2">
 							<div class="w-full lg:w-1/4 lg:px-2">
-								<img class="object-cover shadow-sm rounded-lg" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+								<img class="object-cover shadow-sm rounded-lg" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 							</div>
 							<div class="w-full lg:w-3/4 lg:px-2 mt-4 lg:mt-0">
 								<div class="text-lg font-semibold space-y-1">
