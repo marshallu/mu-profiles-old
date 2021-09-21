@@ -210,3 +210,13 @@ function mu_profiles_activate_format_phone( $phone ) {
 
 add_action( 'init', 'marsha_employee_post_type' );
 add_action( 'init', 'add_custom_department_taxonomy' );
+
+function mu_profiles_redirect_department_page_if_set() {
+	if ( is_tax( 'department' ) ) {
+		if ( get_field( 'department_redirect_department_page', get_queried_object() ) ) {
+			wp_redirect( get_site_url() );
+			die();
+		}
+	}
+}
+add_action( 'template_redirect', 'mu_profiles_redirect_department_page_if_set' );
