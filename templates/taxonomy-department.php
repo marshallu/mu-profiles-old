@@ -41,6 +41,8 @@ require get_template_directory() . '/template-parts/hero/no-hero.php';
 					include plugin_dir_path( __FILE__ ) . '/full-profile.php';
 				} elseif ( 'card' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . '/card.php';
+				} elseif ( 'basic' === $dept_listing ) {
+					include plugin_dir_path( __FILE__ ) . '/basic.php';
 				} else {
 					if ( 'row' === get_field( 'profile_listing_display', 'option' ) ) {
 						include plugin_dir_path( __FILE__ ) . '/row.php';
@@ -50,6 +52,8 @@ require get_template_directory() . '/template-parts/hero/no-hero.php';
 						include plugin_dir_path( __FILE__ ) . '/full-profile.php';
 					} elseif ( 'card' === get_field( 'profile_listing_display', 'option' ) ) {
 						include plugin_dir_path( __FILE__ ) . '/card.php';
+					} elseif ( 'basic' === get_field( 'profile_listing_display', 'option' ) ) {
+						include plugin_dir_path( __FILE__ ) . '/basic.php';
 					} else {
 						include plugin_dir_path( __FILE__ ) . '/table.php';
 					}

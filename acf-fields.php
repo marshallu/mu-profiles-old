@@ -806,12 +806,12 @@ if( function_exists('acf_add_local_field_group') ):
 				'button_label' => 'Add List',
 				'sub_fields' => array(
 					array(
-						'key' => 'field_5f71d60c0098b',
+						'key' => 'field_6075e99bfb968',
 						'label' => 'List Title',
 						'name' => 'list_title',
 						'type' => 'text',
 						'instructions' => '',
-						'required' => 0,
+						'required' => 1,
 						'conditional_logic' => 0,
 						'wrapper' => array(
 							'width' => '',
@@ -825,9 +825,9 @@ if( function_exists('acf_add_local_field_group') ):
 						'maxlength' => '',
 					),
 					array(
-						'key' => 'field_5f71d424f7df6',
+						'key' => 'field_6075e9a8fb969',
 						'label' => 'List Item',
-						'name' => 'employee_list_item',
+						'name' => 'list_item',
 						'type' => 'repeater',
 						'instructions' => '',
 						'required' => 0,
@@ -841,10 +841,10 @@ if( function_exists('acf_add_local_field_group') ):
 						'min' => 0,
 						'max' => 0,
 						'layout' => 'table',
-						'button_label' => 'Add List Item',
+						'button_label' => '',
 						'sub_fields' => array(
 							array(
-								'key' => 'field_5f71d5c6606b2',
+								'key' => 'field_6075e9b4fb96a',
 								'label' => 'List Item',
 								'name' => 'list_item_detail',
 								'type' => 'text',
@@ -935,6 +935,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'enhanced' => 'Enhanced',
 					'full-profile' => 'Full Profile',
 					'card' => 'Card',
+					'basic' => 'Basic',
 				),
 				'default_value' => 'inherit',
 				'allow_null' => 0,
@@ -1109,6 +1110,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'enhanced' => 'Enhanced',
 					'full-profile' => 'Full Profile',
 					'card' => 'Card',
+					'basic' => 'Basic',
 				),
 				'default_value' => 'table',
 				'allow_null' => 0,
