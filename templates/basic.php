@@ -16,6 +16,7 @@
 				<?php
 				while ( have_posts() ) :
 					the_post();
+					$image = get_field( 'employee_headshot' );
 					?>
 					<div class="w-full lg:w-1/2 lg:px-6 mb-8">
 						<div class="flex flex-wrap flex-row lg:-mx-2">
