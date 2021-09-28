@@ -373,7 +373,7 @@ get_template_part( 'template-parts/hero/no-hero' );
 										<div class="bg-white border border-gray-200 border-t-0 rounded-b text-gray-700 px-4 py-4 lg:px-6 lg:py-6 hidden" :class="{ 'hidden' : !toggleOpen}">
 											<div role="list" class="flex flex-wrap mx-0 lg:-mx-4 justify-center">
 												<?php
-												foreach ( $list['list_item'] as $row ) {
+												foreach ( $list['employee_list_item'] as $row ) {
 													echo '<div role="listitem" class="px-0 lg:px-4 w-full lg:w-full flex">';
 													echo '<div class="w-full flex items-start px-3 my-2">';
 													echo '<svg class="mr-4 h-6 w-6 text-green fill-current mt-1 lg:mt-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/></svg>';
