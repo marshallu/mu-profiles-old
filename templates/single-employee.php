@@ -373,7 +373,7 @@ get_template_part( 'template-parts/hero/no-hero' );
 										<div class="bg-white border border-gray-200 border-t-0 rounded-b text-gray-700 px-4 py-4 lg:px-6 lg:py-6 hidden" :class="{ 'hidden' : !toggleOpen}">
 											<div role="list" class="flex flex-wrap mx-0 lg:-mx-4 justify-center">
 												<?php
-												foreach ( $list['employee_list_item'] as $row ) {
+												foreach ( $list['list_item'] as $row ) {
 													echo 'here';
 													echo '<div role="listitem" class="px-0 lg:px-4 w-full lg:w-full flex">';
 													echo '<div class="w-full flex items-start px-3 my-2">';
