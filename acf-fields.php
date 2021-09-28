@@ -751,7 +751,7 @@ if( function_exists('acf_add_local_field_group') ):
 					array(
 						'key' => 'field_6075e9a8fb969',
 						'label' => 'List Item',
-						'name' => 'list_item',
+						'name' => 'employee_list_item',
 						'type' => 'repeater',
 						'instructions' => '',
 						'required' => 0,
