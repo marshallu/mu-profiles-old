@@ -7,6 +7,7 @@ module.exports = {
 			'./source/css/*.css',
 			'./source/css/*/*.css',
 			'./*.php',
+			'./templates/*.php',
 		],
 	}
 }
