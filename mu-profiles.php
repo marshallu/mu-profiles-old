@@ -225,6 +225,6 @@ add_action( 'template_redirect', 'mu_profiles_redirect_department_page_if_set' )
  * Proper way to enqueue scripts and styles
  */
 function mu_profiles_scripts() {
-	wp_enqueue_style( 'mu-profiles', plugin_dir_path( __FILE__ ) . 'css/mu-profiles.css', '', true );
+	wp_enqueue_style( 'mu-profiles', plugin_dir_url( __FILE__ ) . 'css/mu-profiles.css', '', true );
 }
 add_action( 'wp_enqueue_scripts', 'mu_profiles_scripts' );
