@@ -21,7 +21,16 @@ while ( have_posts() ) {
 	?>
 	<div class="w-full lg:w-1/3 px-0 lg:px-4 mb-4 lg:mb-8 flex flex-row">
 		<div class="w-full bg-gray-100 border border-gray-200 px-4 py-4">
-			<div class="text-xl font-semibold"><?php the_title(); ?></div>
+			<?php
+			if ( get_field( 'profile_link_to_profile', 'option' ) ) {
+				?>
+				<div class="text-xl font-semibold"><a href="<?php echo esc_url( get_post_permalink() ); ?>"><?php the_title(); ?></a></div>
+				<?php
+			} else {
+				?>
+				<div class="text-xl font-semibold"><?php the_title(); ?></div>
+			<?php } ?>
+
 			<div class="pt-3 flex space-x-4">
 			<div class="w-1/3">
 				<?php if ( get_field( 'employee_headshot' ) ) { ?>
