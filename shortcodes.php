@@ -255,7 +255,7 @@ function mu_employee( $atts, $content = null ) {
 				$output .= '<div class="w-full bg-gray-100 border border-gray-200 px-4 py-4">';
 
 				if ( get_field( 'profile_link_to_profile', 'option' ) ) {
-					$output .= '<div class="text-xl font-semibold"><a href="' . esc_url( get_post_permalink() ) . '">' . the_title() . '</a></div>';
+					$output .= '<div class="text-xl font-semibold"><a href="' . esc_url( get_post_permalink() ) . '">' . get_the_title() . '</a></div>';
 				} else {
 					$output .= '<div class="text-xl font-semibold">' . get_the_title() . '</div>';
 				}
